@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            height: 100vh;
+        }
+        .left {
+            background-color: #f0f0f0; /* Light gray for contrast */
+            padding: 20px;
+            width: 10%;
+            overflow: auto;
+        }
+        .right {
+            background-color: #ffffff; /* White */
+            padding: 20px;
+            width: 90%;
+            overflow: auto;
+        }
+
+        .carstable {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+th, td, table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+    </style>
+</head>
+
+
+<body>
+<div class="left">
+    <h1>dates</h1>
+        {% for date in dates %}
+            <p> <a href="/{{ date }}">{{ date }}</a></p>
+        {% endfor %}
+</div>
+<div class="right">
+    <h1>cars</h1>
+        <table class="carstable">
+            <thead>
+        <tr>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Year</th>
+          <th>Mileage</th>
+          <th>Power</th>
+          <th>Capacity</th>
+          <th>Fuel</th>
+          <th>Color</th>
+          <th>Used or new</th>
+          <th>Doors</th>
+          <th>Gearbox</th>
+          <th>Location</th>
+          <th>City</th>
+          <th>Region</th>
+          <th>Price</th>
+          <th>lat</th>
+          <th>lon</th>
+        </tr>
+      </thead>
+
+        {% for car in cars %}
+            <tr>
+                <td>{{ car[0] }}</td>
+                <td>{{ car[1] }}</td>
+                <td>{{ car[4] }}</td>
+                <td>{{ car[5] }}</td>
+                <td>{{ car[6] }}</td>
+                <td>{{ car[7] }}</td>
+                <td>{{ car[8] }}</td>
+                <td>{{ car[9] }}</td>
+                <td>{{ car[10] }}</td>
+                <td>{{ car[11] }}</td>
+                <td>{{ car[12] }}</td>
+                <td>{{ car[13] }}</td>
+                <td>{{ car[15] }}</td>
+                <td>{{ car[16] }}</td>
+                <td>{{ car[17] }}</td>
+                <td>{{ car[20] }}</td>
+                <td>{{ car[21] }}</td>
+
+        {% endfor %}
+</body>
+</html>
